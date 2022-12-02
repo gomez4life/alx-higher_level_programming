@@ -1,8 +1,16 @@
 #!/usr/bin/python3
-import sys
-if __name__ == "__main__":
-    n = len(sys.argv)
-    sum = 0
-    for i in range(1, n):
-        sum += int(sys.argv[i])
-    print(sum)
+
+# This program prints the result of the addition of all command line args
+# It should not run when imported
+
+if __name__ == '__main__':
+    import sys
+
+    length = (len(sys.argv) - 1)  # length can now exclude argv[0]
+    summer = 0
+    i = 1
+
+    while i <= length:
+        summer += int(sys.argv[i])  # increment the value of the total sum
+        i += 1
+    print("{:d}".format(summer))  # print the total value
